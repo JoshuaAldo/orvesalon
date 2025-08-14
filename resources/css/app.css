@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 768px) {
+    #home{
+        background-size: 250%  !important;
+    }
+
+}
+
+/* Animasi untuk loading spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Transisi modal */
+.modal-transition {
+    transition: opacity 0.3s ease;
+}
+
+[data-carousel-item] {
+    transition: opacity 0.3s ease-out;
+}
+
+.splide__slide {
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.splide__slide.is-active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.splide__slide:not(.is-active) {
+    transform: scale(1);
+    opacity: 0.3;
+}
+
+.splide__slide:not(.is-active) {
+    filter: blur(2px);
+    transform: scale(0.9);
+}
+.splide__slide,
+.splide__slide.is-clone {
+    transform: scale(1) !important
+}
+
+#price:empty::before {
+    content: attr(data-placeholder);
+    color: #9ca3af; /* Tailwind text-gray-400 */
+}
+
+.strike-through {
+    text-decoration: line-through;
+    color: #6b7280; /* Tailwind's text-gray-500 */
+}
